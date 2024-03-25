@@ -6,6 +6,8 @@ import ContactUs from "../pages/ContactUs/ContactUs";
 import ListedBooks from "../pages/ListedBooks/ListedBooks";
 import PagesToRead from "../pages/PagesToRead/PagesToRead";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import SignIn from "../pages/SignIn/SignIn";
+import SignUp from "../pages/SignUp/SignUp";
 
 const Router = createBrowserRouter([
   {
@@ -36,6 +38,16 @@ const Router = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactUs />,
+      },
+
+      {
+        path: "/signin",
+        element: <SignIn />,
+      },
+
+      {
+        path: "/signup",
+        element: <SignUp />,
       },
     ],
   },

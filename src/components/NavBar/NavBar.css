@@ -1,0 +1,9 @@
+ul li a {
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+ul li a.active {
+  color: #23be0a;
+  border: 2px solid #23be0a;
+}
