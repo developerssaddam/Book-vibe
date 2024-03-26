@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const BookCard = () => {
   return (
     <Link>
-      <div className="bookCard border-2 border-[#F3F3F3] p-5 rounded-2xl space-y-4">
+      <div className="bookCard border-2 border-[#F3F3F3] p-6 rounded-2xl space-y-4">
         <div className="bg-[#F3F3F3] p-5 flex justify-center items-center rounded-2xl">
           <img className="w-[160px]" src="http://localhost:5173/src/assets/img/1.png" alt="" />
         </div>

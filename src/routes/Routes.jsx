@@ -8,6 +8,7 @@ import PagesToRead from "../pages/PagesToRead/PagesToRead";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
+import BookDetails from "../components/BookDetails/BookDetails";
 
 const Router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const Router = createBrowserRouter([
         element: <SignIn />,
       },
 
+      {
+        path: "/book/:id",
+        element: <BookDetails />,
+      },
       {
         path: "/signup",
         element: <SignUp />,
