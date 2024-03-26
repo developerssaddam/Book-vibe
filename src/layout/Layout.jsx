@@ -4,11 +4,15 @@ import Footer from "../components/Footer/Footer";
 
 const Layout = () => {
   return (
-    <>
-      <NavBar />
-      <Outlet />
+    <div className="container mx-auto">
+      <nav>
+        <NavBar />
+      </nav>
+      <main>
+        <Outlet />
+      </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
