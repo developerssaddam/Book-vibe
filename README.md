@@ -1,6 +1,6 @@
 # Book Vibe
 
-## Live site URL: https://660446e31c4a3718dce3ab64--unrivaled-cascaron-717044.netlify.app/contact
+## Live site URL: https://bookvibebydeveloperssaddam.netlify.app/
 
 - Technology :
 
