@@ -24,6 +24,7 @@ const Router = createBrowserRouter([
       {
         path: "/listedbooks",
         element: <ListedBooks />,
+        loader: () => fetch("/db.json"),
       },
 
       {

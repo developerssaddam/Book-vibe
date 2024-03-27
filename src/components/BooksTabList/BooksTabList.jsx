@@ -1,10 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import ReadBooksCard from "../ReadBooksCard/ReadBooksCard";
+import { getLsReadBooksData } from "../../utils/LocalStorage";
+import { useLoaderData } from "react-router-dom";
 
 const BooksTabList = () => {
   const [tabIndex, setTabIndex] = useState(0);
+  const [readBookList, setReadBookList] = useState([]);
+  const allData = useLoaderData();
+
+  useEffect(() => {
+    const readBooks = getLsReadBooksData();
+    const readBooksData = [];
+
+    for (const id of readBooks) {
+      const matchData = allData.find((book) => book.id === id);
+      readBooksData.push(matchData);
+    }
+    setReadBookList(readBooksData);
+  }, [allData]);
+
+  console.log(readBookList);
+
   return (
     <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
       <TabList>
@@ -13,7 +31,9 @@ const BooksTabList = () => {
       </TabList>
       <TabPanel>
         <div className="grid grid-cols-1 gap-5 p-5">
-          <ReadBooksCard />
+          {readBookList.map((item, index) => (
+            <ReadBooksCard key={index} book={item} />
+          ))}
         </div>
       </TabPanel>
       <TabPanel>Wishlist Books</TabPanel>
