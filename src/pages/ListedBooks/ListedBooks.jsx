@@ -35,10 +35,10 @@ const ListedBooks = () => {
   // handleSortByRating.
   const handleReadBookSort = () => {
     const sortByRatingReadBook = readBookList.sort(
-      (a, b) => a.rating - b.rating
+      (a, b) => b.rating - a.rating
     );
     const sortByRatingWishList = wishListData.sort(
-      (a, b) => a.rating - b.rating
+      (a, b) => b.rating - a.rating
     );
     setReadBookList(sortByRatingReadBook);
     setWishListData(sortByRatingWishList);
@@ -47,10 +47,10 @@ const ListedBooks = () => {
   // handleSortByNumberOfPages.
   const handleSortByNumberOfPages = () => {
     const sortByNumberOfPagesReadBook = readBookList.sort(
-      (a, b) => a.totalPages - b.totalPages
+      (a, b) => b.totalPages - a.totalPages
     );
     const sortByNumberOfPagesWishList = wishListData.sort(
-      (a, b) => a.totalPages - b.totalPages
+      (a, b) => b.totalPages - a.totalPages
     );
     setReadBookList(sortByNumberOfPagesReadBook);
     setWishListData(sortByNumberOfPagesWishList);
@@ -59,10 +59,10 @@ const ListedBooks = () => {
   // handleSortByPublishYear.
   const handleSortByPublishYear = () => {
     const sortByPublishYearReadBook = readBookList.sort(
-      (a, b) => a.yearOfPublishing - b.yearOfPublishing
+      (a, b) => b.yearOfPublishing - a.yearOfPublishing
     );
     const sortByPublishYearWishList = wishListData.sort(
-      (a, b) => a.yearOfPublishing - b.yearOfPublishing
+      (a, b) => b.yearOfPublishing - a.yearOfPublishing
     );
     setReadBookList(sortByPublishYearReadBook);
     setWishListData(sortByPublishYearWishList);
