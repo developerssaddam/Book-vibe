@@ -4,12 +4,11 @@ import Footer from "../components/Footer/Footer";
 import { createContext, useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./Layout.css";
 
 export const BookContext = createContext();
-
 const Layout = () => {
   const [books, setBooks] = useState([]);
-
   useEffect(() => {
     fetch("/db.json")
       .then((res) => res.json())
@@ -22,7 +21,7 @@ const Layout = () => {
         <NavBar />
       </nav>
       <BookContext.Provider value={books}>
-        <main>
+        <main className="mHeight">
           <Outlet />
         </main>
       </BookContext.Provider>
