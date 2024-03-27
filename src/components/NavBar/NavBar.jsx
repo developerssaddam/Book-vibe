@@ -37,7 +37,7 @@ const NavBar = () => {
         </div>
         <Link
           to="/"
-          className="btn btn-ghost text-xl md:text-3xl font-bold text-[#131313]"
+          className="btn btn-ghost text-xl md:text-3xl font-bold text-[#23be0a]"
         >
           Book Vibe
         </Link>

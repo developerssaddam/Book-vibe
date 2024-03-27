@@ -49,6 +49,7 @@ const Router = createBrowserRouter([
       {
         path: "/book/:id",
         element: <BookDetails />,
+        loader: () => fetch("/db.json"),
       },
       {
         path: "/signup",
