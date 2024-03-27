@@ -34,7 +34,7 @@ const BarChartt = () => {
   };
 
   return (
-    <BarChart width={800} height={500} data={data}>
+    <BarChart width={800} height={400} data={data}>
       <Bar dataKey="totalPages" fill="#59C6D2" shape={<TriangleBar />} />
       <XAxis dataKey="bookName" />
       <YAxis />

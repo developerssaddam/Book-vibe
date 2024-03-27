@@ -1,39 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import ReadBooksCard from "../ReadBooksCard/ReadBooksCard";
-import {
-  getLsReadBooksData,
-  getLsWishListData,
-} from "../../utils/LocalStorage";
-import { useLoaderData } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const BooksTabList = () => {
+const BooksTabList = ({ readBookList, wishListData }) => {
   const [tabIndex, setTabIndex] = useState(0);
-  const [readBookList, setReadBookList] = useState([]);
-  const [wishListData, setWishListData] = useState([]);
-  const allData = useLoaderData();
-
-  useEffect(() => {
-    const readBooks = getLsReadBooksData();
-    const readBooksData = [];
-    for (const id of readBooks) {
-      const matchData = allData.find((book) => book.id === id);
-      readBooksData.push(matchData);
-    }
-    setReadBookList(readBooksData);
-  }, [allData]);
-
-  useEffect(() => {
-    const wishList = getLsWishListData();
-    const wish_list_data = [];
-    for (const id of wishList) {
-      const matchData = allData.find((book) => book.id === id);
-      wish_list_data.push(matchData);
-    }
-    setWishListData(wish_list_data);
-  }, [allData]);
-
   return (
     <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
       <TabList>
@@ -56,6 +28,11 @@ const BooksTabList = () => {
       </TabPanel>
     </Tabs>
   );
+};
+
+BooksTabList.propTypes = {
+  readBookList: PropTypes.array,
+  wishListData: PropTypes.array,
 };
 
 export default BooksTabList;
