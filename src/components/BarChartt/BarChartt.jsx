@@ -1,5 +1,13 @@
 import { useEffect, useState } from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  CartesianGrid,
+  Cell,
+} from "recharts";
 import { getLsReadBooksData } from "../../utils/LocalStorage";
 import { useLoaderData } from "react-router-dom";
 
@@ -33,9 +41,20 @@ const BarChartt = () => {
     return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
   };
 
+  const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
+
   return (
     <BarChart width={800} height={400} data={data}>
-      <Bar dataKey="totalPages" fill="#59C6D2" shape={<TriangleBar />} />
+      <Bar
+        dataKey="totalPages"
+        fill="#8884d8"
+        shape={<TriangleBar />}
+        label={{ position: "top" }}
+      >
+        {data.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+        ))}
+      </Bar>
       <XAxis dataKey="bookName" />
       <YAxis />
       <Tooltip />
